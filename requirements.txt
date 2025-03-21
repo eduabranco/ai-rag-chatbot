@@ -3,3 +3,5 @@ openai
 streamlit
 duckduckgo-search
 langchain-community
+crewai
+crewai-tools
