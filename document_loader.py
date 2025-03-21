@@ -10,7 +10,7 @@ from langchain.embeddings import HuggingFaceEmbeddings
 
 __import__('pysqlite3')
 import sys
-sys.modules['´sqlite3'] = sys.modules.pop('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 def sanitize_filename(filename):
     # Separa nome e extensão
