@@ -1,10 +1,11 @@
 import streamlit as st
 from rag_handler import process_query
 from document_loader import handle_document_upload
-from dotenv import load_dotenv
 from pathlib import Path
 from document_loader import handle_document_upload
 
+MODEL="gpt-4o-mini"
+OPENAI_API_KEY=st.secrets("OPENAI_API_KEY")
 
 st.set_page_config(
     page_title="Chatbot RAG Avançado",
@@ -13,8 +14,6 @@ st.set_page_config(
 )
 
 Path("./temp").mkdir(exist_ok=True)
-
-load_dotenv()
 
 def main():
     st.title("Chatbot RAG Inteligente")
