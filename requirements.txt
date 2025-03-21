@@ -7,5 +7,4 @@ crewai
 crewai-tools
 pysqlite3-binary
 sentence-transformers
-faiss-gpu
 faiss-cpu
