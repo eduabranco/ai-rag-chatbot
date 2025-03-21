@@ -8,6 +8,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
 def sanitize_filename(filename):
     # Separa nome e extensão
     name, ext = os.path.splitext(filename)

@@ -5,7 +5,7 @@ from pathlib import Path
 from document_loader import handle_document_upload
 
 MODEL="gpt-4o-mini"
-OPENAI_API_KEY=st.secrets("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 st.set_page_config(
     page_title="Chatbot RAG Avançado",

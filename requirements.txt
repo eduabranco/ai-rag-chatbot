@@ -2,3 +2,9 @@ langchain
 openai
 streamlit
 duckduckgo-search
+langchain-community
+crewai
+crewai-tools
+pysqlite3-binary
+sentence-transformers
+faiss-cpu
