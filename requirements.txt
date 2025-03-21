@@ -5,3 +5,4 @@ duckduckgo-search
 langchain-community
 crewai
 crewai-tools
+pysqlite3-binary
