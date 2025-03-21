@@ -2,7 +2,7 @@ langchain
 openai
 streamlit
 duckduckgo-search
--U langchain-community
+langchain-community
 crewai
 crewai-tools
 pysqlite3-binary
