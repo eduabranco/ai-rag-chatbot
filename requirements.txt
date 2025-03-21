@@ -6,3 +6,4 @@ langchain-community
 crewai
 crewai-tools
 pysqlite3-binary
+sentence-transformers
