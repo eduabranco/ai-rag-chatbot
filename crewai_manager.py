@@ -24,7 +24,7 @@ def create_crew(query, context):
     formulation_task = Task(
         description="Transform insights into a well-structured and natural response",
         agent=formulator,
-        expected_output="Final response formatted in markdown with clear sections"
+        expected_output="Final response formatted in markdown with clear sections or with just a direct response"
     )
 
     return Crew(
