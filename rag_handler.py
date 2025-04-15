@@ -1,4 +1,4 @@
-from langchain_openai import OpenAI
+from langchain.llms import OpenAI
 import os
 import web_search
 from pathlib import Path

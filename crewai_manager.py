@@ -2,33 +2,33 @@ from crewai import Agent, Task, Crew
 
 def create_crew(query, context):
     researcher = Agent(
-        role="Pesquisador Sênior",
-        goal="Analisar profundamente o contexto fornecido e identificar informações relevantes",
-        backstory="Especialista em análise crítica e síntese de informações complexas",
-        verbose=True  # Alterado para booleano
+        role="Senior Researcher",
+        goal="Deeply analyze the provided context and identify relevant information",
+        backstory="Expert in critical analysis and synthesis of complex information",
+        verbose=True
     )
 
     formulator = Agent(
-        role="Especialista em Respostas",
-        goal="Gerar respostas claras e contextualizadas baseadas nas análises do pesquisador",
-        backstory="Redator técnico com expertise em comunicação clara e eficaz",
-        verbose=True  # Alterado para booleano
+        role="Answer Specialist",
+        goal="Generate clear and contextualized answers based on the researcher's analysis",
+        backstory="Technical writer with expertise in clear and effective communication",
+        verbose=False
     )
 
     research_task = Task(
-        description=f"Analisar o seguinte contexto e extrair insights relevantes para: {query}\nContexto: {context}",
+        description=f"Analyze the following context and extract relevant insights for: {query}\nContext: {context}",
         agent=researcher,
-        expected_output="Lista de insights relevantes com citações precisas"
+        expected_output="List of relevant insights with accurate citations"
     )
 
     formulation_task = Task(
-        description="Transformar os insights em uma resposta bem estruturada e natural",
+        description="Transform insights into a well-structured and natural response",
         agent=formulator,
-        expected_output="Resposta final formatada em markdown com seções claras"
+        expected_output=f"Final response formatted in markdown with clear sections or with just a direct response, writing in the same language as '{context}'"
     )
 
     return Crew(
         agents=[researcher, formulator],
         tasks=[research_task, formulation_task],
-        verbose=True  # Alterado para booleano
+        verbose=True
     )

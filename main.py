@@ -5,10 +5,10 @@ from pathlib import Path
 from document_loader import handle_document_upload
 
 MODEL="gpt-4o-mini"
-OPENAI_API_KEY=st.secrets("OPENAI_API_KEY")
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 
 st.set_page_config(
-    page_title="Chatbot RAG Avançado",
+    page_title="RAG-Powered Educational Chatbot",
     page_icon="🤖",
     layout="wide"
 )
@@ -16,7 +16,7 @@ st.set_page_config(
 Path("./temp").mkdir(exist_ok=True)
 
 def main():
-    st.title("Chatbot RAG Inteligente")
+    st.title("Education Assistant Chatbot")
     
     # Configuração inicial de estado
     if "messages" not in st.session_state:
@@ -25,25 +25,25 @@ def main():
     # Elementos da sidebar
     with st.sidebar:
         uploaded_files = st.file_uploader(
-            "Carregue documentos (PDF, TXT)",
+            "Load documents (PDF, TXT)",
             type=["pdf", "txt"],
             accept_multiple_files=True,
             key="doc_uploader"  # Chave única para uploader
         )
         
         use_web_search = st.toggle(
-            "Usar busca na web",
+            "Use web search",
             value=True,
             key="web_search_toggle"  # Chave única para toggle
         )
         
-        if st.button("Limpar Histórico", key="clear_chat"):
+        if st.button("Clear History", key="clear_chat"):
             st.session_state.messages = []
             st.rerun()
 
     # Processamento de documentos
     if uploaded_files:
-        with st.spinner("Processando documentos..."):
+        with st.spinner("Processing documents..."):
             handle_document_upload(uploaded_files)
             st.session_state.documents_processed = True
     else:
@@ -56,7 +56,7 @@ def main():
 
     # Input principal do chat com chave fixa
     if prompt := st.chat_input(
-        "Como posso ajudar?", 
+        "How can I help?", 
         key="main_chat_input"  # Chave fixa e única
     ):
         # Validação de entrada
@@ -70,7 +70,7 @@ def main():
             st.stop()
 
         # Processamento da resposta
-        with st.spinner("Analisando..."):
+        with st.spinner("Analyzing..."):
             try:
                 # Adiciona mensagem do usuário
                 st.session_state.messages.append({"role": "user", "content": prompt})
