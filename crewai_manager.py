@@ -12,7 +12,7 @@ def create_crew(query, context):
         role="Answer Specialist",
         goal="Generate clear and contextualized answers based on the researcher's analysis",
         backstory="Technical writer with expertise in clear and effective communication",
-        verbose=True
+        verbose=False
     )
 
     research_task = Task(
