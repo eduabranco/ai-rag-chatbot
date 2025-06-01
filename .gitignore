@@ -1,0 +1,6 @@
+.env
+__pycache__
+/chroma_db/
+/temp/
+/vector_store/
+.venv
