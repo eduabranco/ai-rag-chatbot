@@ -4,8 +4,12 @@ from document_loader import handle_document_upload
 from pathlib import Path
 from document_loader import handle_document_upload
 
-MODEL="gpt-4o-mini"
-OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+try:
+    MODEL="gpt-4.1-nano"
+    OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+except st.errors.StreamlitSecretNotFoundError:
+    from dotenv import load_dotenv
+    load_dotenv()
 
 st.set_page_config(
     page_title="RAG-Powered Educational Chatbot",
