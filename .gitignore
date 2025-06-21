@@ -1,11 +1,10 @@
-# Byte-compiled / optimized / DLL files
 .env
 __pycache__/
 /chroma_db/
 /temp/
 /vector_store/
 .venv
-
+# Byte-compiled / optimized / DLL files
 *.py[cod]
 *$py.class
 

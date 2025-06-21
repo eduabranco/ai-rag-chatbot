@@ -4,10 +4,10 @@ from document_loader import handle_document_upload
 from pathlib import Path
 from document_loader import handle_document_upload
 
-try:
+try:# if on streamlit cloud
     MODEL="gpt-4.1-nano"
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-except st.errors.StreamlitSecretNotFoundError:
+except st.errors.StreamlitSecretNotFoundError:# if running locally
     from dotenv import load_dotenv
     load_dotenv()
 
