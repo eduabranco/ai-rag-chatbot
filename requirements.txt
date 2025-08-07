@@ -5,6 +5,9 @@ duckduckgo-search
 langchain-community
 crewai
 crewai-tools
-pysqlite3-binary
+#pysqlite3-binary
 sentence-transformers
 faiss-cpu
+python-docx
+python-pptx
+sentence-transformers

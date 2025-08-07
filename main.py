@@ -4,10 +4,10 @@ from document_loader import handle_document_upload
 from pathlib import Path
 from document_loader import handle_document_upload
 
-try:
+try: # Check if secrets are available
     MODEL="gpt-4.1-nano"
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
-except st.errors.StreamlitSecretNotFoundError:
+except st.errors.StreamlitSecretNotFoundError: # Fallback if secrets are not set
     from dotenv import load_dotenv
     load_dotenv()
 
@@ -60,7 +60,7 @@ def main():
 
     # Input principal do chat com chave fixa
     if prompt := st.chat_input(
-        "How can I help?", 
+        placeholder="How can I help?", 
         key="main_chat_input"  # Chave fixa e única
     ):
         # Validação de entrada
