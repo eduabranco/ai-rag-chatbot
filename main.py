@@ -5,7 +5,7 @@ from pathlib import Path
 from document_loader import handle_document_upload
 
 try: # Check if secrets are available
-    MODEL="gpt-4.1-nano"
+    MODEL="gpt-5-nano"
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 except st.errors.StreamlitSecretNotFoundError: # Fallback if secrets are not set
     from dotenv import load_dotenv
