@@ -2,7 +2,6 @@ import streamlit as st
 from rag_handler import process_query
 from document_loader import handle_document_upload
 from pathlib import Path
-from document_loader import handle_document_upload
 
 try: # Check if secrets are available
     MODEL="gpt-5-nano"
